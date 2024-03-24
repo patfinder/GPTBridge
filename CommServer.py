@@ -7,7 +7,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+class CommServer(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
@@ -20,7 +20,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
         # Send query to GPT and wait for result.
 
-def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8090):
+def run(server_class=HTTPServer, handler_class=CommServer, port=8090):
     """
     This is the web server runnning together with Selenium
     It receive query from RequestServer, post to ChatGPT 
