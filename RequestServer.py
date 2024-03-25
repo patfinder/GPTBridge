@@ -20,7 +20,7 @@ class RequestServer(BaseHTTPRequestHandler):
     def do_GET(self):
         query_obj = parse_qs(self.path[2:])
 
-        resp = self.gpt_handler.do_query(query_obj['query'])
+        resp = self.gpt_handler.do_query(query_obj['query'][0])
 
         self.send_header('Content-type', 'text/html')
         self.end_headers()
