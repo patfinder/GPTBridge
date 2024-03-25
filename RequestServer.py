@@ -18,22 +18,30 @@ class RequestServer(BaseHTTPRequestHandler):
         super().__init__(*args, **kwargs)
 
     def do_GET(self):
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Content-Type', 'text/html; charset=utf-8')
+
         query_obj = parse_qs(self.path[2:])
-
         resp = self.gpt_handler.do_query(query_obj['query'][0])
-
-        self.send_header('Content-type', 'text/html')
+#         resp = """
+# 123
+# 456
+# 789
+# """
+        resp_bytes = resp.encode('utf-8')
+        self.send_header('Content-Length', len(resp_bytes))
         self.end_headers()
-        self.wfile.write(resp.encode())
+        self.wfile.write(resp_bytes)
+        # self.wfile.write(b'123456')
 
     def do_POST(self):
         # self.send_response(200)
         # self.send_header('Content-type', 'text/html')
         # self.end_headers()
         # self.wfile.write(b"Hello, world!")
-        self._handle()
+        self._handle_123()
 
-    def _handle(self):
+    def _handle_123(self):
         req_str = self.rfile.read()
         req_obj = json.loads(req_str)
         token = req_obj.token

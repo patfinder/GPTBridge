@@ -59,6 +59,7 @@ def open_firefox():
 
         options = Options()
         options.profile = FirefoxProfile('/home/vuong/tmp/FirefoxProfile/')
+        options.set_preference('detach', True)
 
         # options.add_argument('profile=/home/vuong/tmp/FirefoxProfile/')
         # options.add_argument("--log-path=/home/vuong/tmp/ChromeProfile/chromedriver.log")

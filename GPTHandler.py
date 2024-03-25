@@ -56,15 +56,18 @@ class GPTHandler:
         Wait for the "Stop button" to go away.
         """
 
+        time.sleep(3)
+
         # Loop 30 time, wait 1s each time.
         for i in range(30):
             try:
                 path_d = self.submit_btn.find_element(By.CSS_SELECTOR, 'svg>path').get_attribute('d')
                 if not path_d.startswith('M0 2a2 2 0 0'):
                     return True
-                time.sleep(1)
             except Exception as ex:
                 logger.error(f'wait_for_response error: {ex}')
+            
+            time.sleep(1)
                 
         return False
     
