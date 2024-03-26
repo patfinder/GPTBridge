@@ -83,8 +83,10 @@ def open_firefox():
         # options.add_argument("--headless")
 
         # browser = webdriver.Chrome('drivers/chromedriver.exe', chrome_options=chrome_options)
-        return webdriver.Firefox(options)
+        driver =  webdriver.Firefox(options)
+        print('Selenium connection to Firefox openned.')
 
+        return driver
         # driver.close()
 
     except Exception as ex:

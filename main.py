@@ -12,5 +12,4 @@ driver = open_firefox()
 
 # Start RequestServer
 run(driver)
-
 # run(None)
