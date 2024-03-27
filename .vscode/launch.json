@@ -15,7 +15,7 @@
             "name": "Python Debugger: Debug main.py",
             "type": "debugpy",
             "request": "launch",
-            "program": "main.py",
+            "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal"
         },
     ]

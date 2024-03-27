@@ -8,6 +8,11 @@
 - It uses Selenium to control a ChatGPT website.
 - The web server to receive the UI request is Python http.server. The app UI is a React app.
 
+### UI App
+
+- App is configured to be hosted on the same web server as GPTBridge server.
+    The folder is /app. Open /app/index.html
+
 ## Notes
 
 - To serve React app from the same server, build React app:
@@ -17,6 +22,7 @@
 
 ## TODO
 
+- Authenticate access with password?
 - Lock Selenium to avoid multiple concurrent queries.
 - Write log of user's queries, with IP address.
 - Keep previous query on UI, write new query and result on top.
