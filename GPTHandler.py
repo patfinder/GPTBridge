@@ -63,6 +63,7 @@ class GPTHandler:
             try:
                 path_d = self.submit_btn.find_element(By.CSS_SELECTOR, 'svg>path').get_attribute('d')
                 if not path_d.startswith('M0 2a2 2 0 0'):
+                    time.sleep(0.5)
                     return True
             except Exception as ex:
                 logger.error(f'wait_for_response error: {ex}')
