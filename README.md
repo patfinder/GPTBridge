@@ -27,6 +27,11 @@
 - NOTE: This is tested and worked for Firefox on Ubuntu.
     - Chrome seem not working (properly because of Chrome security block to automation)
 
+- Open Firefox with the profile used for running Selenium
+  (This profile folder must be the same as FirefoxProfile() option in code.)
+
+firefox --profile /home/vuong/tmp/FirefoxProfile
+
 - Go to GPTBridge folder.
 - Start GPTBridge python server with below command:
 
